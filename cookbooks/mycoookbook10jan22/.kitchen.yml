@@ -1,8 +1,6 @@
 ---
 driver:
   name: vagrant
-  network:
-  -  ["private_network", {ip: "192.168.33.36" }]
 
 provisioner:
   name: chef_zero
@@ -10,24 +8,18 @@ provisioner:
   # For example:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
-  product_version: 14
-  client_rb:
-    chef_license: accept
 
 verifier:
   name: inspec
 
 platforms:
   - name: ubuntu-16.04
-    driver:
-      box: ubuntu/xenial64
-
- # - name: centos-7
+  - name: centos-7
 
 suites:
   - name: default
     run_list:
-      - recipe[mywebservercookbook::default]
+      - recipe[mycoookbook10jan22::default]
     verifier:
       inspec_tests:
         - test/integration/default

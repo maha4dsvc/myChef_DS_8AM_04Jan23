@@ -6,3 +6,5 @@
 
 include_recipe 'mywebservercookbook::mywebserver'
 include_recipe 'mywebservercookbook::mysql'
+include_recipe  'chef-client::default'
+include_recipe  'mywebservercookbook::installjava'
